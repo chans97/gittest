@@ -11,3 +11,6 @@ media
 
 # 가상환경
 myvenv/
+
+# secret key
+secrets.json
