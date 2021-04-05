@@ -1,0 +1,16 @@
+<a href="{% url 'home'%}">메인으로!</a><br />
+<h1>일기 내용 자세히 보기</h1>
+<div class="posts">
+  {% if post.pub_date %}
+  <div class="date">{{ post.pub_date }}</div>
+  {% endif %}
+  <h1>{{ post.title }}</h1>
+  <p>{{ post.body|linebreaks }}</p>
+  {% if post.file %}
+  <p>
+    <a href="{{post.file.url}}" download>{{post.file}}</a>
+  </p>
+  {% endif %}
+  <a href="{% url 'edit' index=post.pk %}">수정하기</a><br />
+  <a href="{% url 'delete' pk=post.pk %}">삭제하기</a>
+</div>
